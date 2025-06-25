@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flash Logistics Account - OBO'sBANK</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><h1>Create Flash Logistics Account</h1></header>
+  <main class="form-page">
+    <form onsubmit="return createFlashAccount()">
+      <label for="bizname">Business Name</label>
+      <input type="text" id="bizname" name="bizname" required>
+
+      <label for="goods">Type of Goods</label>
+      <input type="text" id="goods" name="goods" required>
+
+      <label for="region">Delivery Region</label>
+      <input type="text" id="region" name="region" required>
+
+      <button type="submit">Generate Flash Account</button>
+    </form>
+
+    <div id="flashResult" style="display:none; margin-top:25px; padding:20px; background:#f1f1f1; border-radius:6px;">
+      <h2>🚚 Flash Logistics Account Created</h2>
+      <p><strong>Account ID:</strong> <span id="accountID"></span></p>
+      <p><strong>Wallet Balance:</strong> ₵5,000.00 (Logistics Credit)</p>
+      <p><strong>Status:</strong> Active - Temporary Use Only</p>
+    </div>
+  </main>
+
+  <script>
+    function createFlashAccount() {
+      const random = Math.floor(Math.random() * 9000 + 1000);
+      document.getElementById("accountID").innerText = "FLASH-LOG-" + random;
+      document.getElementById("flashResult").style.display = "block";
+      return false;
+    }
+  </script>
+</body>
+</html>
