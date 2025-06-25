@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transfer Funds - OBO'sBANK</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><h1>Transfer Funds</h1></header>
+  <main class="form-page">
+    <form onsubmit="return fakeTransfer()">
+      <label for="receiver">Receiver's Name</label>
+      <input type="text" id="receiver" name="receiver" required>
+
+      <label for="account">Receiver's Account Number</label>
+      <input type="text" id="account" name="account" required>
+
+      <label for="amount">Amount (₵)</label>
+      <input type="number" id="amount" name="amount" required>
+
+      <button type="submit">Transfer Now</button>
+    </form>
+    <div id="confirmation" style="display:none; margin-top:20px; padding:15px; background:#d4edda; color:#155724; border-radius:5px;">
+      ✅ Transfer Successful! Funds sent to the recipient.
+    </div>
+  </main>
+
+  <script>
+    function fakeTransfer() {
+      document.getElementById("confirmation").style.display = "block";
+      return false; // Prevent form from reloading the page
+    }
+  </script>
+</body>
+</html>
